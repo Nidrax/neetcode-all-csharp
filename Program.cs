@@ -2,7 +2,11 @@
 
 var tests = new List<ITest>
 {
-    new NeetCodeAllCSharp.ArraysHashing.ContainsDuplicate.Test()
+    new NeetCodeAllCSharp.ArraysHashing.ContainsDuplicate.Test(),
+    new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.Test(
+        new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionStringSort()),
+    new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.Test(
+        new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary())
 };
 
 foreach (var test in tests)
