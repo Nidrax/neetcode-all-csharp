@@ -32,40 +32,50 @@
 // ReSharper disable once CheckNamespace
 namespace NeetCodeAllCSharp.ArraysHashing.TwoSum;
 
-internal class TestCase
+internal class TwoSumTestCase : ITestCase
 {
-    public bool Run(ISolution solution)
+    public bool Run()
     {
-        var result = solution.TwoSum(Nums, Target);
+        var result = Solution.TwoSum(Nums, Target);
         Array.Sort(result);
         Array.Sort(Expected);
         return result.SequenceEqual(Expected);
     }
-    
+
+    public ISolution Solution { get; init; } = null!;
     public int[] Nums { get; init; } = null!;
     public int Target { get; init; }
     public int[] Expected { get; init; } = null!;
 }
 
-public class Test : ITest
+public class TwoSumTest : Test
 {
-    public Test(ISolution solution)
+    public TwoSumTest(ISolution solution)
     {
-        _solution = solution;
-        _testCases = new List<TestCase>
+        TestCases = new List<ITestCase>
         {
-            new() { Nums = new[] { 2, 7, 11, 15 }, Target = 9, Expected = new[] { 0, 1 } },
-            new() { Nums = new[] { 3, 2, 4 }, Target = 6, Expected = new[] { 1, 2 } },
-            new() { Nums = new[] { 3, 3 }, Target = 6, Expected = new[] { 0, 1 } }
+            new TwoSumTestCase
+            {
+                Solution = solution, 
+                Nums = new[] { 2, 7, 11, 15 }, 
+                Target = 9, 
+                Expected = new[] { 0, 1 }
+            },
+            new TwoSumTestCase
+            {
+                Solution = solution, 
+                Nums = new[] { 3, 2, 4 }, 
+                Target = 6, 
+                Expected = new[] { 1, 2 }
+            },
+            new TwoSumTestCase
+            {
+                Solution = solution, 
+                Nums = new[] { 3, 3 }, 
+                Target = 6, 
+                Expected = new[] { 0, 1 }
+            }
         };
     }
-    public Test() : this(new Solution()) { }
-    
-    public bool Run()
-    {
-        return _testCases.All(testCase => testCase.Run(_solution));
-    }
-    
-    private readonly ISolution _solution;
-    private readonly List<TestCase> _testCases;
+    public TwoSumTest() : this(new Solution()) { }
 }

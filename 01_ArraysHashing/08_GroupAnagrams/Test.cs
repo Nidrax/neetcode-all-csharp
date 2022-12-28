@@ -62,11 +62,11 @@ public class StringArrayEqualityComparer : IEqualityComparer<string[]>
         => new StringArrayComparer().GetHashCode(obj);
 }
 
-internal class TestCase
+internal class GroupAnagramsTestCase : ITestCase
 {
-    public bool Run(ISolution solution)
+    public bool Run()
     {
-        var result = solution.GroupAnagrams(Strs);
+        var result = Solution.GroupAnagrams(Strs);
 
         if(result.Count != Expected.Length)
             return false;
@@ -88,42 +88,37 @@ internal class TestCase
         
         return resultArray.SequenceEqual(Expected, new StringArrayEqualityComparer());
     }
-    
+
+    public ISolution Solution { get; init; } = null!;
     public string[] Strs { get; init; } = null!;
     public string[][] Expected { get; init; } = null!;
 }
 
-public class Test : ITest
+public class GroupAnagramsTest : Test
 {
-    public Test(ISolution solution)
+    public GroupAnagramsTest(ISolution solution)
     {
-        _solution = solution;
-        _testCases = new List<TestCase>
+        TestCases = new List<ITestCase>
         {
-            new()
+            new GroupAnagramsTestCase
             {
+                Solution = solution,
                 Strs = new[] {"eat", "tea", "tan", "ate", "nat", "bat"}, 
                 Expected = new[] {new[] {"bat"}, new[] {"nat", "tan"}, new[] {"ate", "eat", "tea"}}
             },
-            new()
+            new GroupAnagramsTestCase
             {
+                Solution = solution,
                 Strs = new[] {""}, 
                 Expected = new[] {new[] {""}}
             },
-            new()
+            new GroupAnagramsTestCase
             {
+                Solution = solution,
                 Strs = new[] {"a"}, 
                 Expected = new[] {new[] {"a"}}
             }
         };
     }
-    public Test() : this(new Solution()) { }
-    
-    public bool Run()
-    {
-        return _testCases.All(testCase => testCase.Run(_solution));
-    }
-    
-    private readonly ISolution _solution;
-    private readonly List<TestCase> _testCases;
+    public GroupAnagramsTest() : this(new Solution()) { }
 }

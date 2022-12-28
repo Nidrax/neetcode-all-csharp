@@ -24,39 +24,31 @@
 // ReSharper disable once CheckNamespace
 namespace NeetCodeAllCSharp.ArraysHashing.ValidAnagram;
 
-internal class TestCase
+internal class ValidAnagramTestCase : ITestCase
 {
-    public bool Run(ISolution solution)
+    public bool Run()
     {
-        var result = solution.IsAnagram(S, T);
+        var result = Solution.IsAnagram(S, T);
         return result == Expected;
     }
-    
+
+    public ISolution Solution { get; init; } = null!;
     public string S { get; init; } = null!;
     public string T { get; init; } = null!;
     public bool Expected { get; init; }
 }
 
-public class Test : ITest
+public class ValidAnagramTest : Test
 {
-    public Test(ISolution solution)
+    public ValidAnagramTest(ISolution solution)
     {
-        _solution = solution;
-        _testCases = new List<TestCase>
+        TestCases = new List<ITestCase>
         {
-            new() {S = "anagram", T = "nagaram", Expected = true},
-            new() {S = "rat", T = "car", Expected = false},
-            new() {S = "a", T = "ab", Expected = false},
-            new() {S = "aacc", T = "ccac", Expected = false}
+            new ValidAnagramTestCase {Solution = solution, S = "anagram", T = "nagaram", Expected = true},
+            new ValidAnagramTestCase {Solution = solution, S = "rat", T = "car", Expected = false},
+            new ValidAnagramTestCase {Solution = solution, S = "a", T = "ab", Expected = false},
+            new ValidAnagramTestCase {Solution = solution, S = "aacc", T = "ccac", Expected = false}
         };
     }
-    public Test() : this(new SolutionStringSort()) { }
-    
-    public bool Run()
-    {
-        return _testCases.All(testCase => testCase.Run(_solution));
-    }
-    
-    private readonly ISolution _solution;
-    private readonly List<TestCase> _testCases;
+    public ValidAnagramTest() : this(new SolutionStringSort()) { }
 }
