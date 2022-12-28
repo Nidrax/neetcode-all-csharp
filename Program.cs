@@ -7,7 +7,8 @@ var tests = new List<ITest>
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionStringSort()),
     new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.Test(
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary()),
-    new NeetCodeAllCSharp.ArraysHashing.TwoSum.Test()
+    new NeetCodeAllCSharp.ArraysHashing.TwoSum.Test(),
+    new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.Test()
 };
 
 foreach (var test in tests)
