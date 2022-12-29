@@ -17,6 +17,7 @@ var tests = new List<Test>
         new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.SolutionHashSet()),
     new NeetCodeAllCSharp.TwoPointers.ValidPalindrome.ValidPalindromeTest(),
     new NeetCodeAllCSharp.TwoPointers.TwoSumII.TwoSumIITest(),
+    new NeetCodeAllCSharp.TwoPointers.ThreeSum.ThreeSumTest(),
 };
 
 foreach (var test in tests)
