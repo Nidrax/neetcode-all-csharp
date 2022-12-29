@@ -22,6 +22,10 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.TwoPointers.TwoSumII.TwoSumIITest(),
     new NeetCodeAllCSharp.TwoPointers.ThreeSum.ThreeSumTest(),
     new NeetCodeAllCSharp.TwoPointers.ContainerWithMostWater.ContainerWithMostWaterTest(),
+    new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.TrappingRainWaterTest(
+        new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.SolutionArray()),
+    new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.TrappingRainWaterTest(
+        new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.SolutionTwoPointers()),
 };
 
 foreach (var test in tests)
