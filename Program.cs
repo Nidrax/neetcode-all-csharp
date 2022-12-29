@@ -9,7 +9,12 @@ var tests = new List<Test>
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary()),
     new NeetCodeAllCSharp.ArraysHashing.TwoSum.TwoSumTest(),
     new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.GroupAnagramsTest(),
-    new NeetCodeAllCSharp.ArraysHashing.ArrayProductExceptSelf.ArrayProductTest()
+    new NeetCodeAllCSharp.ArraysHashing.ArrayProductExceptSelf.ArrayProductTest(),
+    new NeetCodeAllCSharp.ArraysHashing.ValidSudoku.ValidSudokuTest(),
+    new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.LongestConsecutiveSequenceTest(
+        new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.SolutionSortedList()),
+    new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.LongestConsecutiveSequenceTest(
+        new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.SolutionHashSet()),
 };
 
 foreach (var test in tests)

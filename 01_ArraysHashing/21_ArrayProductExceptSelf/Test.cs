@@ -63,5 +63,5 @@ internal class ArrayProductTest : Test
         };
     }
 
-    public ArrayProductTest() : this(new Solution()) {}
+    public ArrayProductTest() : this(new Solution()) { }
 }
