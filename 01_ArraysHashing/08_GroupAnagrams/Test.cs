@@ -46,11 +46,6 @@ public class StringArrayComparer : IComparer<string[]>
                 t, y[i], StringComparison.Ordinal))
                 .FirstOrDefault(result => result != 0);
     }
-
-    public int GetHashCode(string[] obj)
-    {
-        return obj.Aggregate(0, (current, s) => current ^ s.GetHashCode());
-    }
 }
 
 public class StringArrayEqualityComparer : IEqualityComparer<string[]>
@@ -59,7 +54,9 @@ public class StringArrayEqualityComparer : IEqualityComparer<string[]>
         => new StringArrayComparer().Compare(x, y) == 0;
 
     public int GetHashCode(string[] obj)
-        => new StringArrayComparer().GetHashCode(obj);
+    {
+        return obj.Aggregate(0, (current, s) => current ^ s.GetHashCode());
+    }
 }
 
 internal class GroupAnagramsTestCase : ITestCase
