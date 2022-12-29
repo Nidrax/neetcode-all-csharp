@@ -18,6 +18,7 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.TwoPointers.ValidPalindrome.ValidPalindromeTest(),
     new NeetCodeAllCSharp.TwoPointers.TwoSumII.TwoSumIITest(),
     new NeetCodeAllCSharp.TwoPointers.ThreeSum.ThreeSumTest(),
+    new NeetCodeAllCSharp.TwoPointers.ContainerWithMostWater.ContainerWithMostWaterTest(),
 };
 
 foreach (var test in tests)
