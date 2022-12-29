@@ -48,6 +48,7 @@ public class Solution : ISolution
         return rgx.Replace(s.ToLower(), "");
     }
 
+    // OJ score: 82 ms, 44 MB
     public bool IsPalindrome(string s)
     {
         s = Strip(s);
