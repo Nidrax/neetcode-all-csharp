@@ -8,12 +8,13 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.ValidAnagramTest(
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary()),
     new NeetCodeAllCSharp.ArraysHashing.TwoSum.TwoSumTest(),
-    new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.GroupAnagramsTest()
+    new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.GroupAnagramsTest(),
+    new NeetCodeAllCSharp.ArraysHashing.ArrayProductExceptSelf.ArrayProductTest()
 };
 
 foreach (var test in tests)
 {
     Console.WriteLine(test.Run() 
-        ? $"{test.GetType()} passed" 
-        : $"{test.GetType()} failed");
+        ? $"{test.GetType()} [PASSED]" 
+        : $"{test.GetType()} [FAILED]");
 }
