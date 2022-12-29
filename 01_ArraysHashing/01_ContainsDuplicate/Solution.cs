@@ -31,15 +31,19 @@ public interface ISolution
 
 public class Solution : ISolution
 {
-    //OJ score: 176 ms, 52.7 MB
+    // OJ score: 176 ms, 52.7 MB
     public bool ContainsDuplicate(int[] nums) {
-        var dic = new HashSet<int>();
+        // Use a HashSet for O(1) lookup
+        var numSet = new HashSet<int>();
+        
+        // Keep adding values to the set until a duplicate
+        // is found or the end of the array is reached
         foreach(var num in nums)
         {
-            if(dic.Contains(num))
+            if(numSet.Contains(num))
                 return true;
 
-            dic.Add(num);
+            numSet.Add(num);
         }
         return false;
     }

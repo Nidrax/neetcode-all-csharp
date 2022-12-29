@@ -56,9 +56,14 @@ public class Solution : ISolution
         
         while(l<r)
         {
+            // The size of the rectangle is always the minimum of the
+            // two heights multiplied by the distance between them.
             var ar = (r-l) * Math.Min(height[l], height[r]);
             ret = Math.Max(ret, ar);
 
+            // We keep moving the pointers inwards searching for a
+            // height that is greater than the current one.
+            // (if they are equal, it doesn't matter which one we move next)
             if(height[l]<height[r])
                 ++l;
             else

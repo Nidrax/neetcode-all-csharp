@@ -49,6 +49,7 @@ public class Solution : ISolution
 {
     // OJ score: 164 ms, 45.9 MB
     public int[] TwoSum(int[] numbers, int target) {
+        // Since the array is sorted, we can use two pointers to find the solution.
         var ret = new int[2];
         ret[0] = 0;
         ret[1] = numbers.Length - 1;
@@ -57,6 +58,8 @@ public class Solution : ISolution
         {
             var sum = numbers[ret[0]] + numbers[ret[1]];
 
+            // If the sum is too small, move the left pointer (smaller term) to the right.
+            // If the sum is too large, move the right pointer (larger term) to the left.
             if(sum < target)
             {
                 ret[0]++;
@@ -67,6 +70,7 @@ public class Solution : ISolution
             }
             else
             {
+                // Increment the indices by 1 to match the problem's requirement.
                 ret[0]++;
                 ret[1]++;
                 return ret;

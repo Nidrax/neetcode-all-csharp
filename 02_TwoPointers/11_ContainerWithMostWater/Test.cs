@@ -69,6 +69,12 @@ public class ContainerWithMostWaterTest : Test
             new ContainerWithMostWaterTestCase
             {
                 Solution = solution,
+                Height = new[] {1, 8, 6, 52, 55, 4, 8, 3, 7},
+                Expected = 52
+            },
+            new ContainerWithMostWaterTestCase
+            {
+                Solution = solution,
                 Height = new[] {1, 1},
                 Expected = 1
             },

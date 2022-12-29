@@ -42,15 +42,21 @@ public class Solution : ISolution
     // OJ score: 148 ms, 44.3 MB
     public int[] TwoSum(int[] nums, int target) {
         var dic = new Dictionary<int,int>();
+        
         for(var i=0; i < nums.Length; ++i){
-            var rest = target - nums[i];
+            // Calculate the complement
+            var diff = target - nums[i];
             
-            if(dic.ContainsKey(rest))
-                return new[]{i, dic[rest]};
+            // If the complement is in the dictionary, return the indices
+            if(dic.ContainsKey(diff))
+                return new[]{i, dic[diff]};
             
+            // Otherwise, add the number to the dictionary
             if(!dic.ContainsKey(nums[i]))
                 dic.Add(nums[i], i);
         }
+        
+        // Return an empty array if no solution is found
         return new int[2];
     }
 }

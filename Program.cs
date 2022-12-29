@@ -6,6 +6,8 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.ValidAnagramTest(
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionStringSort()),
     new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.ValidAnagramTest(
+        new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionCharArraySort()),
+    new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.ValidAnagramTest(
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary()),
     new NeetCodeAllCSharp.ArraysHashing.TwoSum.TwoSumTest(),
     new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.GroupAnagramsTest(),

@@ -63,6 +63,7 @@ public class Solution : ISolution
 {
     private static bool Validate(string s)
     {
+        // Remove all dots and check for duplicates
         s = s.Replace(".","");
         return !s.GroupBy(x => x).Any(g => g.Count() > 1);
     }
@@ -79,6 +80,7 @@ public class Solution : ISolution
 
             for(var j=0; j<9; ++j)
             {
+                // Concatenate all chars in a row and column
                 si += board[i][j];
                 sj += board[j][i];
             }
@@ -93,6 +95,7 @@ public class Solution : ISolution
             {
                 var s = "";
                 
+                // Concatenate all chars in a 3x3 sub-box
                 for(var k=i-1; k<i+2; ++k)
                 for(var l=j-1; l<j+2; ++l)
                     s += board[k][l];

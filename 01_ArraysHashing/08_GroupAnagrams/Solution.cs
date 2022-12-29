@@ -40,17 +40,26 @@ public class Solution : ISolution
     public IList<IList<string>> GroupAnagrams(string[] strs)
     {
         var ret = new List<IList<string>>();
+        // key: sorted string, value: index of the list in ret
         var dic = new Dictionary<string,int>();
 
         foreach(var s in strs)
         {
+            // Sort the string for comparison
             var k = string.Concat(s.OrderBy(c => c));
+            
             if(dic.ContainsKey(k))
             {
+                // If the sorted string is already in the dictionary,
+                // add the original string to the corresponding list
                 ret[dic[k]].Add(s);
             }
             else
             {
+                // If the sorted string is not in the dictionary,
+                // add the sorted string to the dictionary and
+                // add the original string to a new list in ret
+                // Note: the index of the new list is the current count of ret
                 dic.Add(k, ret.Count);
                 ret.Add(new List<string>{s});
             }

@@ -48,15 +48,21 @@ public class Solution : ISolution
     {
         var res = new List<IList<int>>();
         if(nums.Length < 3) return res;
+        
+        // Sort the array to have a similar approach as to the 2Sum problem
         Array.Sort(nums);
 
         for(var f=0; f<nums.Length-2; ++f)
         {
+            // First term has to be greater than 0 to have a chance to sum up to 0
             if(nums[f] > 0)
                 break;
+            // Skip duplicates
             if(f>0 && nums[f-1] == nums[f])
                 continue;
 
+            // Set left pointer to the next element and right pointer to the last element,
+            // then proceed to find the remaining terms as in the 2Sum problem
             var l = f+1;
             var r = nums.Length-1;
 
@@ -79,6 +85,7 @@ public class Solution : ISolution
                             nums[f], nums[l], nums[r]
                         });
 
+                        // Continue to find the next triplets (skip duplicated lefts)
                         do
                             ++l;
                         while(nums[l] == nums[l-1] && l<r);

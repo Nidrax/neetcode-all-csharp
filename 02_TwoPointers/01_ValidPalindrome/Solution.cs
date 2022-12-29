@@ -51,9 +51,11 @@ public class Solution : ISolution
     // OJ score: 82 ms, 44 MB
     public bool IsPalindrome(string s)
     {
+        // Convert to lowercase and remove non-alphanumeric characters
         s = Strip(s);
         var l = s.Length;
-
+        
+        // Check if the characters are the same from both ends
         for(var i=0; i<l/2; ++i)
         {
             if(s[i] != s[l-i-1]) return false;

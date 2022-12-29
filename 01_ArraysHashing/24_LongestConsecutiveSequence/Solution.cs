@@ -32,6 +32,7 @@ public class SolutionSortedList : ISolution
 {
     // OJ score: 156 ms, 49.4 MB
     public int LongestConsecutive(int[] nums) {
+        // Handle edge cases
         if(nums.Length == 0)
             return 0;
 
@@ -40,21 +41,25 @@ public class SolutionSortedList : ISolution
         // HashSet.Contains() solution below suggested on NeetCode.io
         var n = new HashSet<int>(nums).ToList();
         n.Sort();
-        int longest = 1, tmp = 1;
-
+        
+        int longest = 1, length = 1;
         for(var i=1; i<n.Count; ++i)
         {
+            // If the current number is one more than the previous number,
+            // increment the length of the current sequence.
+            // Otherwise, reset the length of the current sequence and
+            // set the longest sequence length to the max of the two.
             if(n[i] == n[i-1] + 1)
             {
-                ++tmp;
+                ++length;
             }
             else
             {
-                longest = Math.Max(tmp, longest);
-                tmp = 1;
+                longest = Math.Max(length, longest);
+                length = 1;
             }
         }
-        longest = Math.Max(tmp, longest);
+        longest = Math.Max(length, longest);
 
         return longest;
     }
@@ -68,15 +73,19 @@ public class SolutionHashSet : ISolution
         if(nums.Length == 0)
             return 0;
 
-        var n = new HashSet<int>(nums);
+        var numSet = new HashSet<int>(nums);
+        
         var longest = 0;
-
-        foreach (var t in nums)
+        foreach (var n in nums)
         {
-            if(n.Contains(t - 1)) continue;
+            // Find the start of the sequence
+            if(numSet.Contains(n - 1)) continue;
             
             var length = 1;
-            while(n.Contains(t + length))
+            
+            // While the next number in the sequence is in the set,
+            // increment the length of the sequence.
+            while(numSet.Contains(n + length))
                 length++;
 
             longest = Math.Max(longest,length);
