@@ -11,6 +11,7 @@ var tests = new List<Test>
         new NeetCodeAllCSharp.ArraysHashing.ValidAnagram.SolutionDictionary()),
     new NeetCodeAllCSharp.ArraysHashing.TwoSum.TwoSumTest(),
     new NeetCodeAllCSharp.ArraysHashing.GroupAnagrams.GroupAnagramsTest(),
+    new NeetCodeAllCSharp.ArraysHashing.TopKFrequent.TopKFrequentTest(),
     new NeetCodeAllCSharp.ArraysHashing.ArrayProductExceptSelf.ArrayProductTest(),
     new NeetCodeAllCSharp.ArraysHashing.ValidSudoku.ValidSudokuTest(),
     new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.LongestConsecutiveSequenceTest(
