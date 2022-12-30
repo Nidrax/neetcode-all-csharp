@@ -28,6 +28,7 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.TrappingRainWaterTest(
         new NeetCodeAllCSharp.TwoPointers.TrappingRainWater.SolutionTwoPointers()),
     new NeetCodeAllCSharp.SlidingWindow.BuySellStock.BuySellStockTest(),
+    new NeetCodeAllCSharp.SlidingWindow.LongestSubstrWoRepeats.LongestSubstrWoRepeatsTest(),
 };
 
 foreach (var test in tests)
