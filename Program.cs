@@ -14,6 +14,7 @@ var tests = new List<Test>
     new NeetCodeAllCSharp.ArraysHashing.TopKFrequent.TopKFrequentTest(),
     new NeetCodeAllCSharp.ArraysHashing.ArrayProductExceptSelf.ArrayProductTest(),
     new NeetCodeAllCSharp.ArraysHashing.ValidSudoku.ValidSudokuTest(),
+    new NeetCodeAllCSharp.ArraysHashing.EncodeDecodeStrings.EncodeDecodeStringsTest(),
     new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.LongestConsecutiveSequenceTest(
         new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.SolutionSortedList()),
     new NeetCodeAllCSharp.ArraysHashing.LongestConsecutiveSequence.LongestConsecutiveSequenceTest(
